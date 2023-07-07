@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallonScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-
+    public float flatStrength;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,10 @@ public class BallonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myRigidbody.velocity = Vector2.up * 10;
+        if(Input.GetKeyDown(KeyCode.Space)== true)
+        {
+            myRigidbody.velocity = Vector2.up * flatStrength;
+        }
+        
     }
 }
